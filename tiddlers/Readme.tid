@@ -1,0 +1,13 @@
+created: 20230901052320915
+modified: 20230901052525713
+tags: 
+title: Readme
+type: text/vnd.tiddlywiki
+
+{{$:/plugins/paulsweeney/recipebook/Readme}}
+
+!! Installation
+
+Drag the following tiddler into your wiki to import them:
+
+{{$:/plugins/paulsweeney/recipebook||$:/core/ui/Components/plugin-info}}
