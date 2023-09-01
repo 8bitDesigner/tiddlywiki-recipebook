@@ -1,0 +1,9 @@
+attribution: https://google.com
+attributionTitle: A titled attribution
+created: 20230901042834482
+modified: 20230901050023119
+tags: [[Attributed Things]]
+title: Example attribution and title
+type: text/vnd.tiddlywiki
+
+If you add both an `attribution` and `attributionTitle` you can control both the link and the link text used.

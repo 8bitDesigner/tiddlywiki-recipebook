@@ -1,0 +1,8 @@
+attributionTitle: Some cool thing
+created: 20230901042756316
+modified: 20230901050012641
+tags: [[Attributed Things]]
+title: Example attribution title
+type: text/vnd.tiddlywiki
+
+This is an attribution title without a link. It renders as plain text at the top of any tagged tiddlers.

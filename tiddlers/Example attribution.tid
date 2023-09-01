@@ -1,0 +1,8 @@
+attribution: http://google.com
+created: 20230901035354767
+modified: 20230901045953825
+tags: [[Attributed Things]]
+title: Example attribution
+type: text/vnd.tiddlywiki
+
+This is an example of a tiddler that has a rating and an attribution tied to it. You can change the link with the `attribution` field.

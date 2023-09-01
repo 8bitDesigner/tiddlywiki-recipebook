@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/paulsweeney/recipebook",
+  "description": "This is some handy plugins that I use to organize a recipe journal I keep.",
+  "author": "Paul Sweeney",
+  "version": "0.0.1",
+  "core-version": ">=5.0.8",
+  "source": "https://github.com/8bitdesigner/recipebook-plugin",
+  "list": "Readme License",
+  "plugin-type": "plugin"
+}

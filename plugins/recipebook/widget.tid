@@ -1,0 +1,12 @@
+created: 20230901035858180
+modified: 20230901040014781
+tags: $:/tags/ViewTemplate
+title: $:/plugins/paulsweeney/recipebook/widget
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag{$:/plugins/paulsweeney/recipebook/attribution-tag}]">
+	<div class="rating-container">
+		<$attribution source={{!!attribution}} title={{!!attributionTitle}} />
+		<$rating tiddler=<<currentTiddler>>/>
+	</div>
+</$list>

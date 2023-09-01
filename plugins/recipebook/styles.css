@@ -1,0 +1,21 @@
+.tc-tiddler-frame {
+	display: flex;
+	flex-direction: column;
+}
+
+.rating-container {
+	order: 1;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	font-size: 1.2em;
+}
+
+.rating-stars {
+	margin-left: auto;
+}
+
+.tc-tiddler-body {
+	order: 2;
+}
