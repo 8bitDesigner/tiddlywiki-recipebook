@@ -66,14 +66,8 @@ class RatingsWidget extends Widget {
 			this.domNodes.push(star)
 		}
 		
-		container.className = "rating-stars";
+		container.className = "recipebook rating-stars ${editable}";
 		container.title = `${this.rating} out of 5 stars`;
-		container.style = [
-			`cursor: ${this.isEditable ? "pointer" : "default"}`,
-			"font-size: 1.5em",
-			"letter-spacing: -2px",
-			style
-		].join("; ");
 
 		if (this.isEditable) {
 			container.addEventListener("click", (event) => {

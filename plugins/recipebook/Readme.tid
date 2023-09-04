@@ -1,8 +1,18 @@
 title: $:/plugins/paulsweeney/recipebook/Readme
 
-This is a set of small widgets I've developed to keep a small recipe journal. Importantly, they use the `attribution`, and `attributionTitle` fields to render a link at the top of any tiddler with a matching tag. Similarly, a `rating` field is used to draw a series 5 stars, and the value of the rating field is used to highlight between 0 and 5 stars.
+This is a set of small widgets I've developed to keep a small recipe journal. It exposes some helper widgets to do the following:
 
-Additionally, you can set the rating automatically by clicking one of the star icons.
+* Show a headline image for the recipe
+* Set or show a rating for a recipe
+* Track where you got the recipe from so you can attribute it back to the original author / site
+* Lastly, the `<$card />` widget makes it easy to show off recipes
+
+It leans on some fields to do the heavy lifting:
+
+|`image`|A URL to a cool photo of your recipe|
+|`attribution`|This is the external URL to the recipe source.|
+|`attributionTitle`|This is a human-readable title for the recipe source.|
+|`rating`|How good is this thing?|
 
 !! Settings 
 |Prefix attributions with:|<$edit-text tag=input tiddler="$:/plugins/paulsweeney/recipebook/attribution-prefix"/>|

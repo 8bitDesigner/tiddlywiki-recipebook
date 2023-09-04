@@ -3,7 +3,23 @@
 	flex-direction: column;
 }
 
-.rating-container {
+/* 
+ * Stars styles
+ */
+.recipebook.rating-stars {
+	cursor: default
+	font-size: 1.5em;
+	letter-spacing: -2px;
+}
+
+.recipebook.rating-stars.editable {
+	cursor: pointer;
+}
+
+/* 
+ * Widget lockup
+ */
+.recipebook.rating-container {
 	order: 1;
 	
 	display: flex;
@@ -12,10 +28,57 @@
 	font-size: 1.2em;
 }
 
-.rating-stars {
+
+.recipebook.rating-container .rating-stars {
 	margin-left: auto;
 }
 
-.tc-tiddler-body {
+.recipebook.headline-image {
 	order: 2;
+	margin-top: 1em;
+}
+
+.tc-tiddler-body {
+	order: 3;
+}
+
+/* 
+ * Card lockup
+ */
+.recipebook.card-container {
+	display: block;
+	text-decoration: none;
+	color: blue;
+	background: <<colour background>>;
+	box-shadow: <<colour muted-foreground>> 0 3px 10px;
+	margin: 10px;
+}
+
+.recipebook.card-image-container {
+	aspect-ratio: 16/9;
+	display: flex;
+}
+
+.recipebook.card-image {
+	flex: 1 1;
+	display: block;
+	object-fit: cover;
+}
+
+.recipebook.card-meta {
+	display: flex;
+	justify-content: space-between;
+	align-content: baseline;
+	padding: 0.5em;
+	color: <<colour foreground>>;
+}
+
+.recipebook.card-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.recipebook.card-rating {
+	font-size: 16px;
 }

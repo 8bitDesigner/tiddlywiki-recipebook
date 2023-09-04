@@ -5,8 +5,14 @@ title: $:/plugins/paulsweeney/recipebook/widget
 type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]tag{$:/plugins/paulsweeney/recipebook/attribution-tag}]">
-	<div class="rating-container">
+	<div class="recipebook rating-container">
 		<$attribution source={{!!attribution}} title={{!!attributionTitle}} />
 		<$rating tiddler=<<currentTiddler>>/>
 	</div>
+
+	<$list filter="[all[current]has[image]]">
+		<div class="recipebook headline-image">
+				<img src={{!!image}} />
+		</div>
+	</$list>
 </$list>

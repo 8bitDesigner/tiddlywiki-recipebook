@@ -1,0 +1,10 @@
+attribution: https://en.wikipedia.org/wiki/Food
+attributionTitle: Wikipedia
+created: 20230904222949934
+image: https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg
+modified: 20230904232814361
+tags: [[Attributed Things]]
+title: Example with Image
+type: text/vnd.tiddlywiki
+
+This is an example that shows off the automatic embedding of any images in the `image` field.
