@@ -8,12 +8,13 @@ const Rating = require("$:/plugins/paulsweeney/recipebook/rating.js").widget;
 class CardWidget extends Widget {
 	refresh (changedTiddlers) {
 		const changedAttributes = this.computeAttributes();
-		
-		if (
-			changedAttributes.field ||
-			changedAttributes.tiddler ||
-			changedTiddlers[this.title]
-		) {
+		if (!this.tiddler) { return false }
+
+		const title = this.tiddler.fields.title
+		const myTiddler = changedTiddlers[title]
+
+		if ( changedAttributes.tiddler || (myTiddler && myTiddler.modified )) {
+			this._tiddler = null;
 			this.refreshSelf();
 			return true;
 		} else {
@@ -47,13 +48,13 @@ class CardWidget extends Widget {
 	}
 
 	get ratingString () {
-		const rating = this.fields
+		const { rating } = this.tiddler.fields
 		const selected = "★"
 		const unselected = "☆"
 		let result = ""
 
 		for (let i = 0; i < 5; i++) {
-			result += i < this.rating ? selected : unselected
+			result += i < rating ? selected : unselected
 		}
 
 		return result
@@ -62,8 +63,6 @@ class CardWidget extends Widget {
 	render (parent, nextSibling) {
 		this.parentDomNode = parent;
 		this.computeAttributes();
-
-		console.log(this.tiddler)
 
 		if (!this.tiddler) { return }
 		
