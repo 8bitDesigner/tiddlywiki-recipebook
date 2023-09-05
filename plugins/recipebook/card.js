@@ -22,6 +22,34 @@ class CardWidget extends Widget {
 		}
 	}
 
+	get placeholderTiddler() {
+		return "$:/plugins/paulsweeney/recipebook/placeholder-image"
+	}
+
+	dataUri ({ type, text }) {
+		if (type == "image/svg+xml") {
+			return "data:image/svg+xml," + encodeURIComponent(text);
+		} else {
+			return "data:" + type + ";base64," + text;
+		}
+	}
+
+	get imageSource () {
+		const placeholder = this.wiki.getTiddlerText(this.placeholderTiddler).trim()
+		const imageReference = this.tiddler.fields.image || placeholder
+		const targetTiddler = this.wiki.getTiddler(imageReference);
+
+		// External image
+		if (!targetTiddler) {
+			return imageReference
+
+		// Internal image
+		} else if (this.wiki.isImageTiddler(imageReference)) {
+			const { type, text, _canonical_uri } = targetTiddler.fields
+			return _canonical_uri ? _canonical_uri : this.dataUri({ type, text })
+		}
+	}
+
 	createElement (type, attributes = {}, innerText = null) {
 		const element = this.document.createElement(type);
 		this.domNodes.push(element);
@@ -40,7 +68,6 @@ class CardWidget extends Widget {
 	get tiddler () {
 		if (!this._tiddler) {
 			const title = this.getAttribute("tiddler")
-			console.log("looking up title", title)
 			this._tiddler = this.wiki.getTiddler(title);
 		}
 
@@ -66,7 +93,7 @@ class CardWidget extends Widget {
 
 		if (!this.tiddler) { return }
 		
-		const { title, image, rating } = this.tiddler.fields
+		const { title, rating } = this.tiddler.fields
 		const href = "#" + $tw.utils.encodeURIComponentExtended(title)
 
 		const container = this.createElement("a",
@@ -77,7 +104,7 @@ class CardWidget extends Widget {
 		container.appendChild(imageContainer);
 
 		const imageEl = this.createElement("img",
-			{ className: "recipebook card-image", src: image });
+			{ className: "recipebook card-image", src: this.imageSource });
 		imageContainer.appendChild(imageEl);
 		
 		const metaEl = this.createElement("div",

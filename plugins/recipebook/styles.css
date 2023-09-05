@@ -57,6 +57,7 @@
 .recipebook.card-image-container {
 	aspect-ratio: 16/9;
 	display: flex;
+	overflow: hidden;
 }
 
 .recipebook.card-image {
@@ -68,9 +69,15 @@
 .recipebook.card-meta {
 	display: flex;
 	justify-content: space-between;
-	align-content: baseline;
+	align-items: baseline;
 	padding: 0.5em;
 	color: <<colour foreground>>;
+}
+
+@media (max-width: 480px) {
+	.recipebook.card-meta {
+		flex-direction: column;
+	}
 }
 
 .recipebook.card-title {

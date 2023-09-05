@@ -17,3 +17,4 @@ It leans on some fields to do the heavy lifting:
 !! Settings 
 |Prefix attributions with:|<$edit-text tag=input tiddler="$:/plugins/paulsweeney/recipebook/attribution-prefix"/>|
 |Show ratings and attributions on tiddlers tagged|<$edit-text tag=input tiddler="$:/plugins/paulsweeney/recipebook/attribution-tag"/>|
+|Placeholder Image|<$edit-text tag=input tiddler="$:/plugins/paulsweeney/recipebook/placeholder-image"/>|

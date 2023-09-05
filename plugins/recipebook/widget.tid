@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 
 	<$list filter="[all[current]has[image]]">
 		<div class="recipebook headline-image">
-				<img src={{!!image}} />
+			<$image source={{!!image}} />
 		</div>
 	</$list>
 </$list>
